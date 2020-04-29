@@ -2,7 +2,6 @@ import express from 'express';
 import mongoose from 'mongoose';
 import bodyParser from 'body-parser';
 import jwt from 'jsonwebtoken';
-import User from './src/models/userModel';
 import routes from './src/routes/crmRoutes';
 
 const app = express();
@@ -21,7 +20,7 @@ app.use(bodyParser.json());
 // JWT setup
 app.use((req, res, next) => {
     if (req.headers && req.headers.authorization && req.headers.authorization.split(' ')[0] === 'JWT') {
-        jwt.verify(req.headers.authorization.split(' ')[1], 'RESTFULAPIs', (err, decode) => {
+        jwt.verify(req.headers.authorization.split(' ')[1], 'salt', (err, decode) => {
             if (err) req.user = undefined;
             req.user = decode;
             next();

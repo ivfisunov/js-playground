@@ -36,7 +36,7 @@ export const login = (req, res) => {
                         email: user.email,
                         username: user.username,
                         _id: user.id
-                    }, 'RESTFULAPIs')
+                    }, 'salt')
                 })
             }
         }
@@ -45,6 +45,7 @@ export const login = (req, res) => {
 
 export const loginRequired = (req, res, next) => {
     if (req.user) {
+        // if user authorized then go next
         next();
     } else {
         return res.status(401).json({ message: 'Unauthorized user!' });

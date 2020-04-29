@@ -1,7 +1,7 @@
 const http = require('http');
 const url = require('url');
 
-// simple proxy http server 
+// simple proxy-server http server
 http.createServer((req, res) => {
     console.log('Start request', req.url);
     const options = url.parse(req.url);
@@ -29,5 +29,5 @@ http.createServer((req, res) => {
         proxyRequest.end();
     });
 }).listen(8080, '0.0.0.0', () => {
-    console.log('Start proxy...');
+    console.log('Start proxy-server...');
 });

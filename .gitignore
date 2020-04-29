@@ -1,2 +1,4 @@
 node_modules
 .idea
+/secure-api/node_modules
+/scaling-node-app/node_modules

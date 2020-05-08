@@ -1,1 +1,7 @@
-{"cars":[{"car":"Testla","model":"Model T"},{"car":"Toyota","model":"Camry"},{"car":"Toyota","model":"Camry2"}]}
+{
+  "cars": [
+    { "car": "Testla", "model": "Model T" },
+    { "car": "Volvo", "model": "XC90" },
+    { "car": "Ferrary", "model": "Maranello" }
+  ]
+}

@@ -1,5 +1,7 @@
 const express = require('express');
+const bodyParser = require('body-parser');
 const { LocalStorage } = require('node-localstorage');
+const cors = require('cors');
 
 const PORT = 3002;
 
@@ -10,8 +12,10 @@ if (!cars) {
   cars = JSON.parse(db.getItem('cars.json'));
 }
 
-
 const app = express();
+
+app.use(cors());
+app.use(bodyParser.json());
 
 app.get('/admin', (req, res) => {
   res.json(cars);

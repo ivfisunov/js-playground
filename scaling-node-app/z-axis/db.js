@@ -1,4 +1,4 @@
-const {LocalStorage} = require('node-localstorage');
+const { LocalStorage } = require('node-localstorage');
 
 const db1 = new LocalStorage('data-a-m');
 const db2 = new LocalStorage('data-n-z');
